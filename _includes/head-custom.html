@@ -1,0 +1,42 @@
+
+<!-- DEBUG: page.path     = '{{page.path}}' -->
+<!-- DEBUG: page.url      = '{{page.url}}' -->
+<!-- DEBUG: page.title    = '{{page.title}}' -->
+<!-- DEBUG: theme.root    = '{{theme.root}}' -->
+<!-- DEBUG: theme.version = '{{theme.version}}' -->
+
+{% if page.url == "/"
+ # https://stackoverflow.com/q/66438076
+%}
+<script type="text/javascript">
+    var lang = null, i, L;
+
+    if (Array.isArray(window.navigator.languages)) {
+        for (i = 0; i < window.navigator.languages.length; ++i) {
+            L = window.navigator.languages[i];
+            if (L === 'ru' || L.startsWith('ru-')) {
+                lang = L;
+                break;
+            }
+        }
+    }
+
+    lang = lang || window.navigator.language
+                || window.navigator.userLanguage
+                || window.navigator.browserLanguage
+                || 'en';
+
+    if (lang.indexOf('-') !== -1)
+        lang = lang.split('-')[0];
+
+    if (lang === 'ru')
+        window.location.replace('./' + lang + '/');
+    else
+        window.location.replace('./en/');
+</script>
+{% endif %}
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/how-to-get-rich/favicon.ico" -->
+
+<!-- end custom head snippets -->
