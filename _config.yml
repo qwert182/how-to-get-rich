@@ -1,0 +1,9 @@
+title: A Business Training
+
+plugins:
+  - jekyll-remote-theme
+
+remote_theme: jekyll/minima@da43ba27a5d643f3ead1e1aad6764a28ef5a92c1
+
+minima:
+  skin: auto

@@ -1,3 +1,6 @@
-# Test
+---
+layout: home
+title: Test
+---
 
 Test.
